@@ -1,7 +1,17 @@
-body {
-    font-family: Arial, sans-serif;
+* {
+    box-sizing: border-box;
+}
+
+body,
+html {
     margin: 0;
     padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: Arial, sans-serif;
 }
 
 header {
@@ -18,7 +28,8 @@ nav {
     position: sticky;
     top: 0;
     z-index: 1000;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 nav a {
@@ -26,7 +37,7 @@ nav a {
     text-decoration: none;
     padding: 1rem;
     text-align: center;
-    flex: 1; 
+    flex: 1;
 }
 
 section {
@@ -34,36 +45,37 @@ section {
     min-height: 100vh;
 }
 
-#home, #about {
+#home,
+#about {
     background-color: #f4f4f4;
 }
 
-/* Responsiivisuus parannukset */
 section img {
     max-width: 100%;
     height: auto;
 }
 
+/* Responsiivisuus */
 @media (max-width: 600px) {
     nav {
-        flex-direction: column; 
+        flex-direction: column;
     }
 
     nav a {
         padding: 1rem;
         text-align: center;
-        width: 100%; 
+        width: 100%;
     }
 
     body {
-        font-size: 14px; 
+        font-size: 14px;
     }
 
     header {
-        font-size: 18px; 
+        font-size: 18px;
     }
 
     section {
-        padding: 1rem; 
+        padding: 1rem;
     }
 }
