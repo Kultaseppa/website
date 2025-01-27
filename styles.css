@@ -18,12 +18,15 @@ nav {
     position: sticky;
     top: 0;
     z-index: 1000;
+    flex-wrap: wrap; 
 }
 
 nav a {
     color: white;
     text-decoration: none;
     padding: 1rem;
+    text-align: center;
+    flex: 1; 
 }
 
 section {
@@ -31,17 +34,36 @@ section {
     min-height: 100vh;
 }
 
-#home {
+#home, #about {
     background-color: #f4f4f4;
 }
 
-#about {
-    background-color: #f4f4f4;
+/* Responsiivisuus parannukset */
+section img {
+    max-width: 100%;
+    height: auto;
 }
 
-img {
-    width: 100%;
-    max-width: 600px;
-    display: block;
-    margin: 20px auto;
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column; 
+    }
+
+    nav a {
+        padding: 1rem;
+        text-align: center;
+        width: 100%; 
+    }
+
+    body {
+        font-size: 14px; 
+    }
+
+    header {
+        font-size: 18px; 
+    }
+
+    section {
+        padding: 1rem; 
+    }
 }
