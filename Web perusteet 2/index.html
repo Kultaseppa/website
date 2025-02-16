@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Page Website</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #555;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem;
+            text-align: center;
+            flex: 1;
+        }
+
+        section {
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        #home,
+        #about {
+            background-color: #f4f4f4;
+        }
+
+        /* Responsiivisuus parannukset 2 */
+        section img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+            }
+
+            nav a {
+                padding: 1rem;
+                text-align: center;
+                width: 100%;
+            }
+
+            body {
+                font-size: 14px;
+            }
+
+            header {
+                font-size: 18px;
+            }
+
+            section {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>My Single Page Website</h1>
+    </header>
+    <nav>
+        <a href="#koira1">Koira 1</a>
+        <a href="#koira2">Koira 2</a>
+    </nav>
+    <section id="koira1">
+        <h2>Koira 1</h2>
+        <p>Tässä ensimmäinen koira.</p>
+        <img src="https://placedog.net/500/280" alt="Cute dog">
+    </section>
+    <section id="koira2">
+        <h2>Koira 2</h2>
+        <p>Tässä toinen koira.</p>
+        <img src="https://placedog.net/600/400" alt="Cute dog">
+    </section>
+    <script>
+        document.querySelectorAll("nav a").forEach(anchor => {
+            anchor.addEventListener("click", function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth"
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
